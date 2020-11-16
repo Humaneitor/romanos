@@ -15,5 +15,16 @@ class RomanosTest(unittest.TestCase):
         self.assertRaises(ValueError, romano_a_entero, 'Z')
         self.assertRaises(ValueError, romano_a_entero, 23)
 
+
+    def test_MMM(self):
+        self.assertEqual(romano_a_entero('MMM'), 3000)
+    
+    def test_MMMM(self):
+        self.assertRaises(OverflowError, romano_a_entero, 'MMMM')
+
+
+
+
+
         if __name__ == '__main__':
             unittest.main()
