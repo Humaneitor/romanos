@@ -22,6 +22,17 @@ class RomanosTest(unittest.TestCase):
     def test_MMMM(self):
         self.assertRaises(OverflowError, romano_a_entero, 'MMMM')
 
+    def test_CC(self):
+        self.assertEqual(romano_a_entero('CC'), 200)
+    
+    def test_VV(self):
+        self.assertRaises(OverflowError, romano_a_entero, 'VV')
+    
+    def test_IV(self):
+        self.assertEqual(romano_a_entero('IV'), 4)
+
+    def test_MMLXXIII(self):
+        self.assertEqual(romano_a_entero('MMLXXIII'), 2073)
 
 
 
